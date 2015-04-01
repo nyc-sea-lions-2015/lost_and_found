@@ -3,7 +3,7 @@
   <h3><%=item.description%></h3>
     <h4>Contact information:</h4>
     <h5>name: <%=user.name%>, email:<%=user.email%></h5>
-    <% if current_user.may_edit?(item) %>
+    <% if current_user && current_user.may_edit?(item) %>
        <div class="edit=-form">
          <%= erb :"items/edit", locals: { item: item} %>
        </div>
@@ -15,7 +15,7 @@
       <% end%>
         <ul>
           <% comments.each do |c| %>
-            <li><%=erb :"comments/show", locals: {comment: c}%></li>
+            <li class="comment-list"><%=erb :"comments/show", locals: {comment: c}%></li>
           <% end %>
         </ul>
 

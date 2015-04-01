@@ -8,19 +8,25 @@
     </h1>
       <p><%=item.description%>
       </p>
+      <% if current_user && current_user.may_edit?(item) %>
+         <div class="edit=-form">
+           <%= erb :"items/edit", locals: { item: item} %>
+         </div>
+      <% end %>
   </div>
   <% end %>
+  <% if current_user %>
   <button id="new-item">add item</button>
-
-  <div id="create-item">
-     <form class="form-group" action="/items/create" method="post">
-      <input class="form-control" type="text" name="name" placeholder="NAME"><br>
-      <textarea class="form-control" name="description" rows="5" cols="20" placeholder="DESCRIPTION"></textarea><br>
-      <input type="hidden" name="user_id" value=<%=current_user.id%>><br>
-      <input type="hidden" name="lost" value=<%=status=="lost"%> >
-      <input type="hidden" name="found" value=<%=status=="found" %> >
-      <input class="btn-default" type="submit" value="done">
-    </form>
-  </div>
+    <div id="create-item">
+       <form class="form-group" action="/items/create" method="post">
+        <input class="form-control" type="text" name="name" placeholder="NAME"><br>
+        <textarea class="form-control" name="description" rows="5" cols="20" placeholder="DESCRIPTION"></textarea><br>
+        <input type="hidden" name="user_id" value=<%=current_user.id%>><br>
+        <input type="hidden" name="lost" value=<%=status=="lost"%> >
+        <input type="hidden" name="found" value=<%=status=="found" %> >
+        <input class="btn-default" type="submit" value="done">
+      </form>
+    </div>
+  <% end %>
 
 </div>

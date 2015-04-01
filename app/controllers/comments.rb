@@ -9,6 +9,13 @@ post "/comments" do
   end
 end
 
+post "/comments.json" do
+  # p params
+  content_type :json
+  comment = Comment.create(params)
+  comment.to_json
+end
+
 put "/comments/:id" do
   comment = Comment.find_by(id: params[:id])
   comment.text=params[:text]
@@ -23,5 +30,5 @@ delete "/comments/:id" do
   if comment
     comment.destroy
   end
-  redirect "/"
+  redirect back
 end
