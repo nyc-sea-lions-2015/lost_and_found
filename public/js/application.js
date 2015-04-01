@@ -22,9 +22,15 @@ $(document).ready(function() {
     ("#comment-create").hide();
   });
 
-  $(".edit-btn").on("click", function(e){
-    $(this).parent().find(".edit-btn").hide();
-    $(this).parent().find("#hidden-edit").show();
-    $(this).parent().find("#delete-item").hide();
+  $(".edit-btn").on("click", function(){
+    $(this).hide();
+    $(this).parent().find(".hidden-edit").show();
+    $(this).parent().find(".delete-item").hide();
+  });
+
+  $(".comment-edit-btn").on("click", function() {
+    $(this).parent().find(".hidden-comment-edit").show();
+    $(this).hide();
+    $(this).parent().find(".delete-comment").hide();
   });
 });

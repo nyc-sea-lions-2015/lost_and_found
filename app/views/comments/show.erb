@@ -2,3 +2,8 @@
 <p class="comment-text">
   <%= comment.text %>
 </p>
+<% if current_user.may_edit?(comment) %>
+    <div class="edit-form">
+      <%= erb :"comments/edit", locals: { comment: comment} %>
+    </div>
+<% end %>

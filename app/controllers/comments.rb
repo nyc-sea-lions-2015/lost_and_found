@@ -9,6 +9,19 @@ post "/comments" do
   end
 end
 
+put "/comments/:id" do
+  comment = Comment.find_by(id: params[:id])
+  comment.text=params[:text]
+  if comment.valid?
+    comment.save
+  end
+  redirect back
+end
+
 delete "/comments/:id" do
-  "hi"
+   comment = Comment.find_by(id: params[:id])
+  if comment
+    comment.destroy
+  end
+  redirect "/"
 end
