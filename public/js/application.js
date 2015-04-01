@@ -20,5 +20,11 @@ $(document).ready(function() {
   $("#comment-create").on("click", function(){
     $("#hidden_create").show();
     ("#comment-create").hide();
-  })
+  });
+
+  $(".edit-btn").on("click", function(e){
+    $(this).parent().find(".edit-btn").hide();
+    $(this).parent().find("#hidden-edit").show();
+    $(this).parent().find("#delete-item").hide();
+  });
 });

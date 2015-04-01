@@ -23,3 +23,21 @@ post "/items/create" do
     [400, "you have not feel up the form correctly!"]
   end
 end
+
+delete "/items/:id" do
+   item = Item.find_by(id: params[:id])
+  if item
+    item.destroy
+  end
+  redirect "/"
+end
+
+put "/items/:id" do
+  item = Item.find_by(id: params[:id])
+  item.name = params[:name]
+  item.description = params[:description]
+  if item.valid?
+    item.save
+  end
+  redirect "/"
+end

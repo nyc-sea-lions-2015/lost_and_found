@@ -8,3 +8,7 @@ post "/comments" do
     [400, "something went wrong"]
   end
 end
+
+delete "/comments/:id" do
+  "hi"
+end

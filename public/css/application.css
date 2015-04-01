@@ -32,3 +32,11 @@
   width: 60%;
   border-top: 2px solid black;
 }
+#hidden-edit {
+  display: none;
+}
+.comment-text {
+  width: 70%;
+  background: pink;
+  text-indent: 10px;
+}

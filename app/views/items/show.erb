@@ -3,6 +3,12 @@
   <h3><%=item.description%></h3>
     <h4>Contact information:</h4>
     <h5>name: <%=user.name%>, email:<%=user.email%></h5>
+    <% if current_user.may_edit?(item) %>
+       <div class="edit=-form">
+         <%= erb :"items/edit", locals: { item: item} %>
+       </div>
+    <% else %>
+    <% end %>
     <div id="comment-field">
       <% if comments.count > 0%>
         <h2>Comments:</h2>
@@ -19,10 +25,4 @@
         </div>
     </div>
 
-    <% if current_user.may_edit?(item) %>
-       <div class="edit=-form">
-         <%= erb :"items/edit", locals: { item: item} %>
-       </div>
-    <% else %>
-    <% end %>
 </div>
