@@ -2,6 +2,7 @@
   text-align: center;
 }
 #greeting {
+  color: red;
   font-size: 60px;
   text-align: center;
 }
@@ -45,4 +46,8 @@
 }
 .hidden-comment-edit {
   display: none;
+}
+#title {
+  font-size: 35px;
+  color: pink;
 }
