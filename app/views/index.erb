@@ -2,8 +2,13 @@
 <div id="main-div">
   <h1 id="greeting">Welcome to our lost and found page!
   </h1>
+  <div id="signin">
+    <%= erb :"/authentication/login"%>
+ </div>
+ <div id="signup">
+  <%=erb :"authentication/signup"%>
+ </div>
   <h2 class="main-links"><a href="/items/lost">I lost something</a><br></h2>
   <h2 class="main-links"><a href="/items/found">I found something</a><br></h2>
-
 
 </div>

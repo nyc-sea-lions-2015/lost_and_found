@@ -13,3 +13,6 @@
   font-size: 50px;
   color: green;
 }
+#signin, #signup {
+  display: none;
+}
