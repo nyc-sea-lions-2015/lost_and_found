@@ -12,4 +12,13 @@ $(document).ready(function() {
     $("#signup").show();
     $("#signin").hide();
   });
+
+  $("#new-item").click(function(){
+    $("#create-item").show();
+  });
+
+  $("#comment-create").on("click", function(){
+    $("#hidden_create").show();
+    ("#comment-create").hide();
+  })
 });

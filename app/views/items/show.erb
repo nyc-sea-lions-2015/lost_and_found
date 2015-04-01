@@ -1,0 +1,28 @@
+<div id="main-div">
+  <h1><%=item.name%></h1>
+  <h3><%=item.description%></h3>
+    <h4>Contact information:</h4>
+    <h5>name: <%=user.name%>, email:<%=user.email%></h5>
+    <div id="comment-field">
+      <% if comments.count > 0%>
+        <h2>Comments:</h2>
+      <% end%>
+        <ul>
+          <% comments.each do |c| %>
+            <li><%=erb :"comments/show", locals: {comment: c}%></li>
+          <% end %>
+        </ul>
+
+        <button id="comment-create">comment</button>
+        <div id="hidden_create"><br>
+           <%= erb :"comments/new", locals: { item: item} %>
+        </div>
+    </div>
+
+    <% if current_user.may_edit?(item) %>
+       <div class="edit=-form">
+         <%= erb :"items/edit", locals: { item: item} %>
+       </div>
+    <% else %>
+    <% end %>
+</div>

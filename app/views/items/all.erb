@@ -1,11 +1,26 @@
+
 <div id="main-div" >
+  <h1> Here is the list of all <%=status%> items:</h1>
   <% items.each do |item| %>
   <div class="item">
-    <h1><a href="#"><%=item.name%>
+    <h1><a href="../items/<%=item.id%>"><%=item.name%>
         </a>
     </h1>
       <p><%=item.description%>
       </p>
   </div>
   <% end %>
+  <button id="new-item">add item</button>
+
+  <div id="create-item">
+     <form class="form-group" action="/items/create" method="post">
+      <input class="form-control" type="text" name="name" placeholder="NAME"><br>
+      <textarea class="form-control" name="description" rows="5" cols="20" placeholder="DESCRIPTION"></textarea><br>
+      <input type="hidden" name="user_id" value=<%=current_user.id%>><br>
+      <input type="hidden" name="lost" value=<%=status=="lost"%> >
+      <input type="hidden" name="found" value=<%=status=="found" %> >
+      <input class="btn-default" type="submit" value="done">
+    </form>
+  </div>
+
 </div>

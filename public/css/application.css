@@ -1,5 +1,5 @@
-#main-div{
-  margin: 50px;
+#main-div{margin: 100px;
+  text-align: center;
 }
 #greeting {
   font-size: 60px;
@@ -15,4 +15,20 @@
 }
 #signin, #signup {
   display: none;
+}
+#create-item {
+  display: none;
+  position: relative;
+  left: 300px;
+  width: 40%;
+  margin: 20px;
+}
+#hidden_create {
+  display: none;
+}
+#comment-field {
+  margin-left: 100px;
+  text-align: left;
+  width: 60%;
+  border-top: 2px solid black;
 }

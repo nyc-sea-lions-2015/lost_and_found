@@ -1,0 +1,9 @@
+<div id="new-comment">
+   <form action="/comments" method="POST">
+      <textarea name="text" rows="10" cols="40" placeholder="content">
+      </textarea><br>
+      <input type="hidden" name="item_id" value=<%=item.id%>>
+      <input type="hidden" name="user_id", value=<%=current_user.id%> >
+      <input class="indent-field no-border" type="submit" class="invisible_btn" value="create">
+    </form>
+</div>
