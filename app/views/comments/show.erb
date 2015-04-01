@@ -1,7 +1,22 @@
 <!-- <h5> user: <%=comment.user.name%>, email: <%=comment.user.email%></h5> -->
+<li class="comment-list">
 <p class="comment-text">
   <%= comment.text %>
+
 </p>
 <% if current_user && current_user.may_edit?(comment) %>
   <%= erb :"comments/edit", locals: { comment: comment} %>
 <% end %>
+
+<button class="comment-create">comment</button>
+<div class="hidden-create"><br>
+   <%= erb :"comments/new", locals: { item: item, parent_id: comment.id} %>
+</div>
+<% if  comment.replies.count > 0%>
+     <% comment.replies.each do |reply| %>
+      <ul><div>
+        <%= erb :"comments/show", locals: {comment: reply, item: item, parent_id: comment.id} %></div>
+      </ul>
+     <% end %>
+  <% end %>
+</li>
