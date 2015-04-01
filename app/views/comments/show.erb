@@ -1,0 +1,7 @@
+<!-- <h5> user: <%=comment.user.name%>, email: <%=comment.user.email%></h5> -->
+<p class="comment-text">
+  <%= comment.text %>
+</p>
+<% if current_user && current_user.may_edit?(comment) %>
+  <%= erb :"comments/edit", locals: { comment: comment} %>
+<% end %>
