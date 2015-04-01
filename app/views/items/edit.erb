@@ -1,5 +1,5 @@
 <div class="hidd">
-  <button class="edit-btn">edit</button>
+  <button class="edit-btn btn">edit</button>
   <form class="delete-item" action="/items/<%=item.id%>" method="POST">
     <input type="hidden" name="_method" value="Delete">
     <input type="submit" value="Delete">
@@ -10,7 +10,7 @@
         <input type="text" name="name" placeholder="<%=item.name%>" value=<%=item.name%>><br><br>
         <textarea  name="description" rows="5" cols="25" placeholder="<%=item.description%>" value=<%=item.description%> ></textarea><br>
         <input type="hidden" name="user_id" value=<%=item.user.id%>>
-      <input class="no-border" type="submit" value="update">
+      <input class="no-border btn" type="submit" value="update">
     </form>
   </div>
 </div>
