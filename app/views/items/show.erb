@@ -10,18 +10,20 @@
     <% else %>
     <% end %>
     <div id="comment-field">
-      <% if comments.count > 0%>
         <h2>Comments:</h2>
+      <% if comments.count > 0 %>
       <% end%>
         <ul>
           <% comments.each do |c| %>
-            <li class="comment-list"><%=erb :"comments/show", locals: {comment: c}%></li>
+            <% unless c.parent_id %>
+              <%=erb :"comments/show", locals: {comment: c, item: item, parent_id: nil}%>
+            <% end %>
           <% end %>
         </ul>
 
         <button id="comment-create">comment</button>
-        <div id="hidden_create"><br>
-           <%= erb :"comments/new", locals: { item: item} %>
+        <div class="hidden-create"><br>
+           <%= erb :"comments/new", locals: { item: item, parent_id: nil} %>
         </div>
     </div>
 

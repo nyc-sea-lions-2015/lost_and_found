@@ -18,9 +18,15 @@ $(document).ready(function() {
   });
 
   $("#comment-create").on("click", function(){
-    $("#hidden_create").show();
+    $(this).next(".hidden-create").show();
     $("#comment-create").hide();
   });
+
+  $(".comment-create").on("click", function(){
+    $(this).next(".hidden-create").show();
+    $(this).hide();
+  });
+
 
   $(".edit-btn").on("click", function(){
     $(this).hide();
@@ -45,7 +51,7 @@ $(document).ready(function() {
     });
   });
 
-   $(".new-comment-form").on("submit",function(event) {
+   $("#comment-field").on("submit",".new-comment-form",function(event) {
     event.preventDefault();
     var $target = $(event.target);
     $.ajax({

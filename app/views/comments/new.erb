@@ -1,9 +1,10 @@
 <!-- <div id="new-comment"> -->
    <form class="new-comment-form" action="/comments" method="POST">
-      <textarea name="text" rows="4" cols="25" placeholder="content">
+      <textarea name="text" rows="4" cols="25" placeholder="content" >
       </textarea><br>
       <input type="hidden" name="item_id" value=<%=item.id%>>
       <input type="hidden" name="user_id", value=<%=current_user.id%> >
+      <input type="hidden" name="parent_id" value=<%=parent_id%> >
       <input type="submit" value="create">
     </form>
 <!-- </div> -->

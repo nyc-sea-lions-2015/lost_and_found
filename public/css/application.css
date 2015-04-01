@@ -26,6 +26,9 @@
 #hidden_create {
   display: none;
 }
+.hidden-create {
+  display: none;
+}
 #comment-field {
   margin-left: 100px;
   text-align: left;
