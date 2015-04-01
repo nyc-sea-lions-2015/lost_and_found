@@ -1,4 +1,4 @@
-<!-- <h5> user: <%=comment.user.name%>, email: <%=comment.user.email%></h5> -->
+
 <li class="comment-list">
 <p class="comment-text">
   <%= comment.text %>
@@ -8,7 +8,7 @@
   <%= erb :"comments/edit", locals: { comment: comment} %>
 <% end %>
 
-<button class="comment-create">comment</button>
+<button class=" btn comment-create">comment</button>
 <div class="hidden-create"><br>
    <%= erb :"comments/new", locals: { item: item, parent_id: comment.id} %>
 </div>
